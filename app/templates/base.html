@@ -1,0 +1,32 @@
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }} - Microblog</title>
+        {% else %}
+        <title>Welcome to Microblog!</title>
+        {% endif %}
+        <meta http-equiv="refresh" >
+    </head>
+    <body>
+        <div>Microblog: 
+            <a href="{{url_for('index')}}">Home</a>
+            <a href="{{url_for('login')}}">Login</a>
+            <a href="{{url_for('documentdata')}}">document</a>
+            <a href="{{url_for('documentparts')}}">documentparts</a>
+            <a href="{{url_for('ulists')}}">ulists</a>
+            <a href="{{url_for('tables')}}">tables</a>
+            <a href="{{url_for('tablesdesc')}}">tables desc</a>
+        </div>
+        <hr>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </body>
+</html>

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1></h1>
+<form action="" method="post" >
+    {{ form.hidden_tag() }}
+
+    <div>
+    <div style="float: left; width: 50%;">
+        {{ form.rowIndex.label}}<br>
+        {{ form.rowIndex() }}
+    </div>
+    <div style="float: left; width: 50%;">
+        {{ form.rowSpan.label}}<br>
+        {{ form.rowSpan() }}
+    </div>
+    </div>
+    <div>
+        <div style="float: left; width: 50%;">
+            {{ form.colIndex.label}}<br>
+            {{ form.colIndex() }}
+        </div>
+        <div style="float: left; width: 50%;">
+            {{ form.colSpan.label}}<br>
+            {{ form.colSpan() }}
+        </div>
+    </div>
+
+    <div style="float: left; width: 50%;">
+        {{ form.dataradiofield.label}}<br>
+        {{ form.dataradiofield() }}
+    </div>
+    <div style="float: left; width: 50%;">
+        {{ form.tablesRadioField.label}}<br>
+        {{ form.tablesRadioField() }}
+    </div>
+
+
+        {{ form.submit() }}
+        <!-- <input type="submit" value="Go"> -->
+
+</form>
+{% endblock %}

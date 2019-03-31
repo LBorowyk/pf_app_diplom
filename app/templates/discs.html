@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <!-- <script type="text/javascript" src="./static/js/pdfmake/pdfmake.min.js"></script>
+    <script type="text/javascript" src="./static/js/pdfmake/vfs_fonts.js"></script>
+    <script type="text/javascript" src="./static/js/makepdfdile.js"></script> -->
+    <!-- <form action="" method="post" novalidate> -->
+        <!-- <div>
+            {{ form.disc_types.label}} <br>
+            {{ form.disc_types() }}
+        </div> -->
+
+    <!-- </form> -->
+    <table>
+        {% for type in form.disc_types.type_form %}
+        <tr>
+            <td>
+                {{ type.id_type }}
+            </td>
+            <td>
+                {{ type.disc_name}}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

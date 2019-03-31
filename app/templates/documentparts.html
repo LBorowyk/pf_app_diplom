@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1></h1>
+<form action="" method="post" >
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.partname.label }}<br>
+        {{ form.partname(size=100)}}<br>
+    </p>
+
+    <div>
+        {{ form.parent() }}
+    </div>
+
+        {{ form.submit() }}
+        <!-- <input type="submit" value="Go"> -->
+
+    <table border="1">
+        <th>
+            id_part
+        </th>
+        <th>
+            partname
+        </th>
+        <th>
+            parent_id
+        </th>
+        
+    {% for el in form.partsdata %}
+    <tr>
+        <td>
+            {{ el.id_part }}
+        </td>
+        <td>
+            {{ el.partname }}
+        </td>
+        <td>
+            {{ el.parent_part_id }}
+        </td>
+    </tr>
+    {% endfor%}
+    </table>
+
+</form>
+{% endblock %}

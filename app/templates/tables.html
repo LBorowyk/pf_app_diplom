@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1></h1>
+<form action="" method="post" >
+    {{ form.hidden_tag() }}
+
+    <p>
+        {{ form.tablename.label }}<br>
+        {{ form.tablename(size=100)}}<br>
+    </p>
+    <p>
+        {{ form.widthstrs.label }} <br>
+        {{ form.widthstrs(size=100) }}<br>
+    </p>
+    <div style="float: left; width: 50%;">
+        {{ form.headerrowcount.label}}<br>
+        {{ form.headerrowcount() }}
+    </div>
+    <div style="float: left; width: 50%;">
+        {{ form.layout.label}}<br>
+        {{ form.layout() }}
+    </div>
+
+
+        {{ form.submit() }}
+        <!-- <input type="submit" value="Go"> -->
+
+</form>
+{% endblock %}

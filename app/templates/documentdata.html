@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1></h1>
+<form action="" method="post" >
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.first_str.label }}<br>
+        {{ form.first_str(size=100)}}<br>
+    </p>
+    <p>
+        {{ form.second_str.label }} <br>
+        {{ form.second_str(size=100) }}<br>
+    </p>
+    <div style="float: left; width: 50%;">
+        {{ form.style.label}}<br>
+        {{ form.style() }}
+    </div>
+
+    <div style="margin-left: 51%;">
+        {{ form.documentpart.label}}<br>
+        {{ form.documentpart() }}
+    </div>
+
+        {{ form.submit() }}
+        <!-- <input type="submit" value="Go"> -->
+
+    <table border="1">
+        <th>
+            id_element
+        </th>
+        <th>
+            first_data
+        </th>
+        <th>
+            second_data
+        </th>
+        <th>
+            id_style
+        </th>
+        <th>
+            id_part
+        </th>
+        <th>
+            ord
+        </th>
+    {% for el in form.data %}
+    <tr>
+        <td>
+            {{ el.id_element }}
+        </td>
+        <td>
+            {{ el.data_first }}
+        </td>
+        <td>
+            {{ el.data_second }}
+        </td>
+        <td>
+            {{ el.id_style }}
+        </td>
+        <td>
+            {{ el.id_part }}
+        </td>
+        <td>
+            {{ el.ord }}
+        </td>
+    </tr>
+    {% endfor%}
+    </table>
+
+</form>
+{% endblock %}

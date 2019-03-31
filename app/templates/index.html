@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <script type="text/javascript" src="./static/js/pdfmake/pdfmake.min.js"></script>
+    <script type="text/javascript" src="./static/js/pdfmake/vfs_fonts.js"></script>
+    <script type="text/javascript" src="./static/js/makepdfdile.js"></script>
+    <script>
+        var dd = {{ obj|tojson }}
+        // var post = {{ posts|tojson }}
+    </script>
+    <button onclick="getPDF(dd)">
+        PDF
+    </button>
+    {{ obj|tojson }}
+{% endblock %}

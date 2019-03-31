@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1></h1>
+<form action="" method="post" >
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.ulistname.label }}<br>
+        {{ form.ulistname(size=40)}}
+    </p>
+
+        {{ form.submit() }}
+        <!-- <input type="submit" value="Go"> -->
+
+    <table border="1">
+        <th>
+            id_ulist
+        </th>
+        <th>
+            ulistname
+        </th>
+        <th>
+            lielements
+        </th>
+        
+    {% for el in form.ulistdata %}
+    <tr>
+        <td>
+            {{ el.id_ulist }}
+        </td>
+        <td>
+            {{ el.ulistname }}
+        </td>
+        <td>
+            <ul>
+                {% for li in el.lielements %}
+                <li>{{ li }}</li>
+                {% endfor%}
+            </ul>
+        </td>
+
+    </tr>
+    {% endfor%}
+    </table>
+
+</form>
+
+<form action="" method="post" >
+    {{ formdata.hidden_tag() }}
+    <p>
+        {{ formdata.strorradio.label}}<br>
+        {{ formdata.strorradio() }}
+    </p>
+    <p>
+        {{ formdata.first_str.label }}<br>
+        {{ formdata.first_str(size=100)}}<br>
+    </p>
+    <p>
+        {{ formdata.second_str.label }} <br>
+        {{ formdata.second_str(size=100) }}<br>
+    </p>
+<div>
+    <div style="float: left; width: 33%;">
+        {{ formdata.style.label}}<br>
+        {{ formdata.style() }}
+    </div>
+
+    <div style="float: left; width: 33%;">
+        {{ formdata.documentpart.label}}<br>
+        {{ formdata.documentpart() }}
+    </div>
+
+    <div style="margin-left: 68%;">
+        {{ formdata.ulistradiofield.label}}<br>
+        {{ formdata.ulistradiofield() }}
+    </div>
+</div>
+
+    <div>
+        {{ formdata.dataradiofield.label}} <br>
+        {{ formdata.dataradiofield()}}
+    </div>
+
+    <p>
+        {{ formdata.submit() }}
+    </p>
+
+</form>
+{% endblock %}
